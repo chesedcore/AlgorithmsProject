@@ -17,7 +17,6 @@ typedef struct {
   int source_idx;
   int target_idx;
   int distance;
-  int toll;
 } Edge;
 
 typedef struct {
@@ -31,7 +30,9 @@ typedef struct {
 
 Graph create_graph();
 void add_vertex_to_graph(Graph* graph, char* name);
-void add_edge_to_graph(Graph* graph, int source_idx, int target_idx, int distance, int toll);
+void add_edge_to_graph(Graph* graph, int source_idx, int target_idx, int distance);
 
+//utility
+void print_graph(Graph* graph);
 
 #endif
