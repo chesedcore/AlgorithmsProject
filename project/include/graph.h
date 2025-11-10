@@ -31,6 +31,7 @@ typedef struct {
 Graph create_graph();
 void add_vertex_to_graph(Graph* graph, char* name);
 void add_edge_to_graph(Graph* graph, int source_idx, int target_idx, int distance);
+void sort_edges(Graph* graph);
 
 //utility
 void print_graph(Graph* graph);

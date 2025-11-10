@@ -44,6 +44,52 @@ void add_edge_to_graph(Graph* graph, int source, int target, int distance){
 
 }
 
+void merge_edges(Edge* edges, int left, int mid, int right) {
+
+  Edge temp[MAX_EDGES];
+
+  int left_index = left;
+  int right_index = mid+1;
+  int temp_index = left;
+
+  while(left_index <= mid && right_index <= right) {
+    if(edges[left_index].distance <= edges[right_index].distance){
+      temp[temp_index++] = edges[left_index++];
+    } else {
+      temp[temp_index++] = edges[right_index++];
+    }
+  }
+
+  while(left_index <= mid){
+    temp[temp_index++] = edges[left_index++];
+  }
+
+  while(right_index <= right){
+    temp[temp_index++] = edges[right_index++];
+  }
+
+  for(int i = left; i <= right; i++){
+    edges[i] = temp[i];
+  }
+}
+
+void merge_sort_edges(Edge* edges, int left, int right) {
+
+  if(left >= right) return;
+
+  int mid = (left+right)/2;
+  
+  merge_sort_edges(edges, left, mid);
+  merge_sort_edges(edges, mid+1, right);
+
+  merge_edges(edges, left, mid, right);
+
+}
+
+void sort_edges(Graph* graph) {
+  merge_sort_edges(graph->edges, 0, graph->num_edges - 1);
+}
+
 void print_graph(Graph* graph) {
 
   printf("Graph has %d edges and %d vertices.\n", graph -> num_edges, graph -> num_vertices);
