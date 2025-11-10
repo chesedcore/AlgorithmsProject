@@ -1,0 +1,3 @@
+env = Environment(CC='gcc', CFLAGS='-Wall -O2', CPPPATH=['include'])
+env.Program(target='bin/AlgorithmsProject', source=Glob('src/*.c'))
+
