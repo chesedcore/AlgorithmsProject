@@ -63,8 +63,6 @@ O(E log V)
 
 # Empirical Results
 
-## Empirical Results
-
 I measured the execution time of Kruskal's algorithm on graphs with varying numbers of vertices and edges. The following table summarizes the observed running times (in milliseconds):
 
 | Vertices (V) | Edges (E) | Time (ms) |
@@ -75,5 +73,9 @@ I measured the execution time of Kruskal's algorithm on graphs with varying numb
 | 500          | 2000      | 12.7      |
 | 1000         | 5000      | 32.1      |
 
-The graph below visualises the relationship between the number of edges and execution time, confirming the expected \(O(E \log E)\) complexity trend.
+The graph below visualises the relationship between the number of edges and execution time, confirming the expected (O(E log E)) complexity trend.
+
+![Alt text](kruskal.webp "Kruskal's algorithm")
+
+# Identification: 23052041, CSE-30
 
